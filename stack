@@ -1,0 +1,57 @@
+public class Stack
+{
+    private int top;
+    private int[] element;
+    private int max;
+
+
+    Stack(int max)
+    {
+        top = 0;
+        element = new int[max];
+        this.max = max;
+    }
+
+    Stack()
+    {
+        this(5);
+    }
+
+    public void push(int value)
+    {
+        if(top == element.length)
+        {
+            System.out.println("Stack is Full");
+            return;
+        }
+        element[top++] = value;
+    }
+
+    public int pop()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Stack is Empty");
+            return 0;
+        }
+        else
+            return element[--top];
+    }
+
+    public boolean isEmpty()
+    {
+        return top == 0;
+    }
+
+    public int peek()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Empty");
+            return 0;
+        }
+        else
+            return element[top-1];
+
+    }
+}
